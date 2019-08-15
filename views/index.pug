@@ -1,0 +1,109 @@
+doctype html
+html
+  head
+    title My Serverless Application
+    link(href="css" rel="stylesheet")
+    link(href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet")
+    script(type="module")
+    script(src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js")
+    script(type="module" src="TweenLite.js")
+    script(type="module" src="MorphSVGPlugin.js")
+    script(src="script.js")
+  body
+    #page
+      #blobs.z-0.fixed.transition-transform-long
+        #profile.relative.items-center.flex.justify-center.items-center
+          #profile-main.z-20
+            .container
+              section
+                .name.mb-20
+                  h6.text-left.font-size-20.mb-10 Name
+                  div 川上　望 (Nozomi Kawakami)
+                .detail.mb-20
+                  h6.text-left.font-size-20.mb-10 detail
+                  p 新卒でSierに入社し、某信託銀行へ常駐。業務ツールの開発・保守を2年間従事。使用言語は VB6, VBA, VB.Net。DBはSQLserverを使用。
+                  p 2019年8月より、Salesforceを使用した開発業務に携わる。
+                  p 現在は本業の傍、サポートとして自社開発企業の開発業務に参画。ヘアスタイリストとお客様をマッチングサービスをRuby on Railsを使用し開発中。
+          #profile-link.profile-link.flex.justify-center.z-20
+            .to-profile.z-20(v-on:click="moveProfile")
+              .profile-arrows.arrows.absolute
+                i.fas.fa-chevron-left
+              div.absolute.rotate-l.profile-label Plofile
+            .back-to-top-from-profile.absolute.z-20(v-on:click="backToTop")
+              i.fas.fa-arrow-right.fa-2x
+          .absolute.w-140vw.h-150vh
+            svg#blob-profile(version="1.1" viewBox="0 0 500 500" preserveAspectRatio="none" ).w-full.h-full
+              path(id="a01" class="st2" d="M494.42,148.74C486.41,93.97,251.39-3.99,146.86,20.35C41.59,44.87,26.11,65.06,12.28,136.27C-9.9,250.51,32.59,361.26,84.07,428.02c92.58,120.08,218.41,60.96,269.29,17.59C489.02,329.97,499.69,184.71,494.42,148.74z")
+              path(id="a02" class="st2" d="M495.44,303.02c-2.97-151.21-53.64-222.7-170.43-268.2c-30.5-11.88-151.71-20.94-219.69,30.27C-35.76,171.38,27.41,366.73,51.68,399.57c54.39,73.6,161.99,78.33,220.22,75.77C418.22,468.9,497.12,388.71,495.44,303.02z")
+              path(id="a03" class="st2" d="M492.99,199.57C493.2,148.72,431.41,3.61,254.41,2.86c-146.9-0.62-179.5-4.31-214.4,66.38C-0.07,150.39,0.15,293.9,98.98,417.42c101.67,102.84,208.97,91.49,274.72,37.95C474.66,373.17,492.62,285.26,492.99,199.57z")
+              path(id="a04" class="st2" d="M442.2,250.88c-17.48-61.38,77.6-134.95-57.49-191.57C361.4,49.54,195.45-45.51,69.32,55.63c-108.46,86.97-48.18,266.91-20.96,359.4c35.53,120.76,273.49,39.06,331.07,24.03C555.8,393.02,463.44,325.48,442.2,250.88z")
+              path(id="a05" class="st2" d="M483.74,177.7C475.49,91.66,324.25,22.18,220.07,34.82C120.55,46.89,54.32,88.75,25.89,161.95c-33.32,85.78,2.63,233.78,15.42,272.57c14.98,45.45,226.26,45.07,283.71,31.75C469.19,432.86,492.48,268.77,483.74,177.7z")
+              path(id="a06" class="st2" d="M497.46,349.54c-14.45-153.06-55.89-324.8-179.55-338.83C295.61,8.18,80.31,4.25,57.34,78.1c-59.94,192.7-87.15,282.9,3,378.86c46.42,49.42,222.22,42.21,277.71,38.93C448.53,489.38,505.67,436.45,497.46,349.54z")
+              path(id="a07" class="st2" d="M499.27,139.47c-1.41-72.26-160.81-98.04-210.91-109.99c-27.85-6.64-210.75,1.8-263.93,89.55c-56.64,93.48,10.22,274.82,82.92,332.98c42.16,33.73,200.91,28.97,239.69,7.77C431.07,413.86,496.72,346.26,499.27,139.47z")
+              path(id="a08" class="st2" d="M495.06,279.01c-8.42-64.44-102.1-262.77-209.4-264.61C174.62,12.49,40.85,2.8,16.21,94.54c-28.43,105.84,5.66,207.64,57.14,274.4c92.58,120.08,164.98,127.72,230.46,114.2C465.51,449.76,510.32,395.82,495.06,279.01z")
+        #work.relative.items-center.flex.justify-center
+          #work-main.z-20
+            .container
+              section
+                .Product.mb-20
+                  h6.text-left.font-size-20.mb-10 Product
+                  a.z-100(href='https://www.wanname.net/') Wanname
+                .Article.mb-20
+                  h6.text-left.font-size-20.mb-10 Article
+                  a.z-100(href='https://qiita.com/nozomi53motomachi/items/fef1b90e69b4a3b52bf7') RailsとBootstrap4でカレンダー形式の日付入力フォームを実装する
+          #work-link.work-link.flex.justify-center.z-20
+            .to-work.z-20(v-on:click="moveWork")
+              .work-arrows.arrows.absolute
+                i.fas.fa-chevron-right
+              div.absolute.rotate-r.work-label Work
+            .back-to-top-from-work.absolute.z-20(v-on:click="backToTop")
+              i.fas.fa-arrow-left.fa-2x
+          .absolute.w-140vw.h-150vh
+            svg#blob-work(version="1.1" viewBox="0 0 500 500" preserveAspectRatio="none" ).w-full.h-full
+              path(id="b01" class="b0" d="M16.7,319.8C14,259.2,97,95.4,219.2,58.2c96.2-29.3,255.3,8,269.2,79.2c22.2,114.2-11.3,233.1-72,291.8C362.3,481.4,185,488,125.9,456.5C71.2,427.4,18.3,356.1,16.7,319.8z")
+              path(id="b02" class="b0" d="M16.7,319.8C46.3,171.5-1.4,150.2,103.2,71.3c26.2-19.8,237.5-87.4,304-34c115.2,92.5,87.8,279.4,63.5,312.2C416,423.1,347.9,465.5,290.3,475.2C161.7,497,0,403.6,16.7,319.8z")
+              path(id="b03" class="b0" d="M6.3,200.7C6.1,149.9,35.9,49.3,230.4,28.9c146.5-15.4,196.5-51.4,231.5,19.3c40.2,81.2,68.9,248.9-30.2,372.5c-102,102.8-220.1,50.7-286-2.8C44.4,335.5,6.7,286.4,6.3,200.7z")
+              path(id="b04" class="b0" d="M14,233.1c7.8-63.3,72.5-160.3,100.9-172.6c23.2-10.1,189.8-104.8,316.3-3.7c108.8,87,62.1,265.1,21,359.4c-17.4,40-197.3,32-256.5,24.2C129.8,431.7,3.3,319.2,14,233.1z")
+              path(id="b05" class="b0" d="M6.3,154.4c8.3-86,173.3-125.5,312.1-131.2C418.8,19,446.2,89.9,474.7,163.1c33.4,85.8-36.8,233.8-49.6,272.6c-15,45.5-98.1,57.2-155.8,43.8C124.7,446.1-2.5,245.4,6.3,154.4z")
+              path(id="b06" class="b0" d="M6.3,319.6C9,250,162.4,57.2,280.6,17.2c51.1-17.3,89.9,5.8,162.5,62c36.2,28.1,87.4,282.9-3,378.9c-46.5,49.4-187.5,26.6-270.9-1.7C64.1,420.9,5.2,349.1,6.3,319.6z")
+              path(id="b07" class="b0" d="M13.3,134.5C14.7,62.3,32.2,54.9,82.4,43c27.9-6.6,334.5-64.9,387.8,22.8C527,159.3,465.9,395,393,453.2c-42.3,33.7-184.9,24.5-223.8,3.3C85,410.5,15.9,341.3,13.3,134.5z")
+              path(id="b08" class="b0" d="M16.6,265.8c8.4-64.4-85-173.9,150.7-235.8c107.7-28.3,292.3-26,317.1,65.8c28.5,105.8,3.2,234.3-48.4,301c-92.8,120.1-174.3,101.1-240,87.6C33.9,450.9,1.3,382.6,16.6,265.8z")
+        #contact.relative.items-center.flex.justify-center
+          #contact-main.z-20
+            .container
+              section
+                .Twitter.mb-20
+                  h6.text-left.font-size-20.mb-10 Twitter
+                  a(href='https://twitter.com/home?lang=ja') @zozo_note
+                .Mail.mb-20
+                  h6.text-left.font-size-20.mb-10 Mail
+                  div wish911wish@gmail.com
+                .GitHub.mb-20
+                  h6.text-left.font-size-20.mb-10 GitHub
+                  a(href='https://github.com/wish911wish') wish911wish
+          #contact-link.contact-link.flex.justify-center.z-20
+            .to-contact.z-20(v-on:click="moveContact")
+              .contact-arrows.arrows.absolute
+                i.fas.fa-chevron-right
+              div.absolute.rotate-r.contact-label Contact
+            .back-to-top-from-contact.absolute.z-20(v-on:click="backToTop")
+              i.fas.fa-arrow-left.fa-2x
+          .absolute.w-140vw.h-150vh
+            svg#blob-contact(version="1.1" viewBox="0 0 500 500" preserveAspectRatio="none" ).w-full.h-full
+              path(id="c01" class="c0" d="M13.3,84C3.2,21.4,95.1-2.5,218,17.2c55,8.8,256.5,49,270.4,120.2C510.6,251.6,428,454,331,462c-86.7,7.2-181.4-55.5-232-100C52.5,321.1,19.1,119.9,13.3,84z")
+              path(id="c02" class="c0" d="M29,270C58.6,121.7-47.2,154,57.4,75.1c26.2-19.8,283.3-91.2,349.8-37.8c115.2,92.5,87.7,338.3,63.4,371.1C415.9,482,219.9,479,164,471C34.9,452.6,12.3,353.8,29,270z")
+              path(id="c03" class="c0" d="M5.2,216C5,165.2,35.9,49.3,230.4,28.9c146.5-15.4,175.4-56,210.4,14.7c40.2,81.2,21.9,338.6,2.8,361.2C350,515.2,151.9,516.1,86,462.6C-15.3,380.2,5.6,301.7,5.2,216z")
+              path(id="c04" class="c0" d="M15.4,120.2C1.5,52.6,132.6,60.3,161,48c23.2-10.1,143.7-92.3,270.2,8.8c108.8,87,62.1,265.1,21,359.4c-17.4,40-306,66.6-365.2,58.8C21.1,466.3,32.8,205.2,15.4,120.2z")
+              path(id="c05" class="c0" d="M10.1,53C18.4-33,271.9,17.9,344,30c99.1,16.6,102.2,59.9,130.7,133.1c33.4,85.8,2.9,260.7-9.9,299.5c-15,45.5-265.1,5.8-322.8-7.6C-2.6,421.6,1.3,144,10.1,53z")
+              path(id="c06" class="c0" d="M14.3,398C-8.9,332.3-11.2,67,107,27c51.1-17.3,281.2-33.5,357.8-1c59,25,9.9,137.1,18.2,291c5.8,107-47.5,152.1-139,166.8C239.7,500.6,36.6,461,14.3,398z")
+              path(id="c07" class="c0" d="M5.5,175.1C6.9,102.9,26.7,73.2,82.4,43C153,4.7,416.9-21.9,470.2,65.8C527,159.3,485,370,433,456c-28,46.3-133.2,27.8-172.1,6.6C176.7,416.6,8.1,381.9,5.5,175.1z")
+              path(id="c08" class="c0" d="M41,250.2C21.5,162.3-67,26,167.3,30C278.6,31.9,454.2-29.8,479,62c28.5,105.8,19.5,264.4-25,336c-42.9,69-192.3,99.9-258,86.4C33.9,450.9,66,363.2,41,250.2z")
+      main#main.z-10
+        .container
+          article#content.z-100
+            section.min-height-screen.aline-item-center.justify-center
+              div
+                h1.font-size-20.mb-20 Welcome
+                h2 Nozomi Kawakami's portfolio site
+script
